@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y \
         libxslt-dev \
         libmagickwand-dev \
         libmagickcore-dev \
-        libmemcached-dev \
+        libmemcached-dev &&\
         rm -rf /var/lib/apt/lists/*
 
 RUN wget https://getcomposer.org/download/1.2.0/composer.phar -O /usr/local/bin/composer && \
