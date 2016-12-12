@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y \
         libxslt-dev \
         libmagickwand-dev \
         libmagickcore-dev \
+        libc-client2007e-dev \
         libmemcached-dev &&\
         rm -rf /var/lib/apt/lists/*
 
