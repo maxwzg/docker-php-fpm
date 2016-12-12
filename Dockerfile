@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y \
         libmagickwand-dev \
         libmagickcore-dev \
         libc-client2007e-dev \
+        libssl-dev \
         libmemcached-dev &&\
         rm -rf /var/lib/apt/lists/*
 
@@ -41,6 +42,7 @@ RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
     docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd && \
     docker-php-ext-configure mysql --with-mysql=mysqlnd && \
     docker-php-ext-configure mysqli --with-mysqli=mysqlnd && \
+    docker-php-ext-configure imap --with-imap-ssl --with-kerberos &&\
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/lib
 
 RUN docker-php-ext-install iconv \
