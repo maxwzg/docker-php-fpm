@@ -1,6 +1,8 @@
 FROM php:5.6.28-fpm
 
 MAINTAINER WuZhiGang "11036407@qq.com"
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+COPY sources.list /etc/apt/
 
 RUN apt-get update && apt-get install -y \
         curl \
