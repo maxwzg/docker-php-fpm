@@ -33,9 +33,6 @@ RUN apt-get update && apt-get install -y \
         libmemcached-dev &&\
         rm -rf /var/lib/apt/lists/*
 
-RUN wget https://getcomposer.org/download/1.2.0/composer.phar -O /usr/local/bin/composer && \
-    chmod a+rx /usr/local/bin/composer
-
 RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h && \
     ln -fs /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/
 
@@ -115,6 +112,9 @@ RUN pecl install xdebug && \
 RUN docker-php-ext-enable redis && \
     docker-php-ext-enable imagick && \
     docker-php-ext-enable memcached && \
+
+RUN wget https://getcomposer.org/download/1.2.0/composer.phar -O /usr/local/bin/composer && \
+    chmod a+rx /usr/local/bin/composer
 
 EXPOSE 9000
 CMD ["php-fpm"]
