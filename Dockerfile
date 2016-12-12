@@ -75,7 +75,7 @@ RUN docker-php-ext-install iconv \
     pdo_sqlite \
     phar \
     posix \
-    readline \
+#    readline \
 #    reflection\
     session \
     simplexml \
