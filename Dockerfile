@@ -42,7 +42,7 @@ RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
     docker-php-ext-configure mysqli --with-mysqli=mysqlnd && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/lib
 
-RUN docker-php-ext-install -j$(nproc) iconv \
+RUN docker-php-ext-install iconv \
     mcrypt \
     bcmath \
     bz2 \
