@@ -37,7 +37,7 @@ RUN wget https://getcomposer.org/download/1.2.0/composer.phar -O /usr/local/bin/
     chmod a+rx /usr/local/bin/composer
 
 RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h && \
-    ln -fs /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/  \
+    ln -fs /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/
 
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
     docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd && \
