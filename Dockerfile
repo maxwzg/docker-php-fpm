@@ -116,8 +116,9 @@ RUN docker-php-ext-enable redis && \
     docker-php-ext-enable imagick && \
     docker-php-ext-enable memcached
 
-RUN wget https://getcomposer.org/download/1.2.0/composer.phar -O /usr/local/bin/composer && \
-    chmod a+rx /usr/local/bin/composer
-
+COPY composer.phar /usr/local/bin/composer
+#RUN wget https://getcomposer.org/download/1.2.0/composer.phar -O /usr/local/bin/composer && \
+#    chmod a+rx /usr/local/bin/composer
+RUN chmod a+rx /usr/local/bin/composer
 EXPOSE 9000
 CMD ["php-fpm"]
