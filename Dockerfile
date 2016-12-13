@@ -106,9 +106,9 @@ RUN docker-php-ext-install iconv \
 #    pecl install imagick-3.4.1 && \
 #    rm -rf /tmp/*
 
-RUN pecl install xdebug && \
-    pecl install memcached && \
-    pecl install redis && \
+RUN pecl install xdebug-2.5.0 && \
+    pecl install memcached-2.2.0 && \
+    pecl install redis-2.2.8 && \
     pecl install imagick && \
     rm -rf /tmp/*
 
