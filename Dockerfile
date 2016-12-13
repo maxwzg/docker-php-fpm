@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
         libkrb5-dev \
         libicu-dev \
         libsqlite3-dev \
-        libeditline-dev \
+        libedit-dev \
         libtidy-dev \
         libxslt-dev \
         libmagickwand-dev \
@@ -75,7 +75,7 @@ RUN docker-php-ext-install iconv \
     pdo_sqlite \
     phar \
     posix \
-#    readline \
+    readline \
 #    reflection\
     session \
     simplexml \
@@ -114,7 +114,7 @@ RUN pecl install xdebug && \
 
 RUN docker-php-ext-enable redis && \
     docker-php-ext-enable imagick && \
-    docker-php-ext-enable memcached && \
+    docker-php-ext-enable memcached
 
 RUN wget https://getcomposer.org/download/1.2.0/composer.phar -O /usr/local/bin/composer && \
     chmod a+rx /usr/local/bin/composer
